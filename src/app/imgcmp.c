@@ -1,4 +1,4 @@
-// modified for VAFuzz
+// modified for VAFuzz 
 /*
  * Copyright (c) 2001-2003 Michael David Adams.
  * All rights reserved.
@@ -222,7 +222,7 @@ int main(int argc, char **argv)
 			break;
 		case OPT_MINONLY:
 			minonly = 1;
-		// 	break;
+			break;
 		// case OPT_METRIC:
 		// 	metricname = jas_optarg;
 		// 	break;

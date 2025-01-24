@@ -83,21 +83,21 @@
 \******************************************************************************/
 
 typedef enum {
-	OPT_HELP,
-	OPT_VERSION,
+	// OPT_HELP,
+	// OPT_VERSION,
 	OPT_VERBOSE,
 	OPT_QUIET,
 	OPT_INFILE,
-	OPT_DEBUG,
-	OPT_MAXSAMPLES,
-	OPT_MAXMEM,
-	OPT_DECOPT,
+	// OPT_DEBUG,
+	// OPT_MAXSAMPLES,
+	// OPT_MAXMEM,
+	// OPT_DECOPT,
 	OPT_SPECIAL,
-	OPT_DEFAULT_MAX_MEM,
-	OPT_LIST_ENABLED_CODECS,
-	OPT_LIST_ALL_CODECS,
-	OPT_ENABLE_FORMAT,
-	OPT_ENABLE_ALL_FORMATS,
+	// OPT_DEFAULT_MAX_MEM,
+	// OPT_LIST_ENABLED_CODECS,
+	// OPT_LIST_ALL_CODECS,
+	// OPT_ENABLE_FORMAT,
+	// OPT_ENABLE_ALL_FORMATS,
 } optid_t;
 
 /******************************************************************************\
@@ -114,23 +114,23 @@ void cleanup(void);
 \******************************************************************************/
 
 static const jas_opt_t opts[] = {
-	{OPT_HELP, "help", 0},
-	{OPT_VERSION, "version", 0},
+	// {OPT_HELP, "help", 0},
+	// {OPT_VERSION, "version", 0},
 	{OPT_VERBOSE, "verbose", 0},
 	{OPT_QUIET, "quiet", 0},
-	{OPT_QUIET, "q", 0},
+	// {OPT_QUIET, "q", 0},
 	{OPT_INFILE, "f", JAS_OPT_HASARG},
-	{OPT_DEBUG, "debug-level", JAS_OPT_HASARG},
-	{OPT_MAXSAMPLES, "max-samples", JAS_OPT_HASARG},
-	{OPT_MAXMEM, "memory-limit", JAS_OPT_HASARG},
-	{OPT_DECOPT, "decoder-option", JAS_OPT_HASARG},
+	// {OPT_DEBUG, "debug-level", JAS_OPT_HASARG},
+	// {OPT_MAXSAMPLES, "max-samples", JAS_OPT_HASARG},
+	// {OPT_MAXMEM, "memory-limit", JAS_OPT_HASARG},
+	// {OPT_DECOPT, "decoder-option", JAS_OPT_HASARG},
 	{OPT_DECOPT, "o", JAS_OPT_HASARG},
 	{OPT_SPECIAL, "X", 0},
-	{OPT_DEFAULT_MAX_MEM, "default-memory-limit", 0},
-	{OPT_LIST_ENABLED_CODECS, "list-enabled-formats", 0},
-	{OPT_LIST_ALL_CODECS, "list-all-formats", 0},
-	{OPT_ENABLE_FORMAT, "enable-format", JAS_OPT_HASARG},
-	{OPT_ENABLE_ALL_FORMATS, "enable-all-formats", 0},
+	// {OPT_DEFAULT_MAX_MEM, "default-memory-limit", 0},
+	// {OPT_LIST_ENABLED_CODECS, "list-enabled-formats", 0},
+	// {OPT_LIST_ALL_CODECS, "list-all-formats", 0},
+	// {OPT_ENABLE_FORMAT, "enable-format", JAS_OPT_HASARG},
+	// {OPT_ENABLE_ALL_FORMATS, "enable-all-formats", 0},
 	{-1, 0, 0}
 };
 
@@ -184,23 +184,23 @@ int main(int argc, char **argv)
 		case OPT_QUIET:
 			verbose = -1;
 			break;
-		case OPT_VERSION:
-			printf("%s\n", JAS_VERSION);
-			return EXIT_SUCCESS;
-			break;
-		case OPT_DEBUG:
-			debug = atoi(jas_optarg);
-			break;
+		// case OPT_VERSION:
+		// 	printf("%s\n", JAS_VERSION);
+		// 	return EXIT_SUCCESS;
+		// 	break;
+		// case OPT_DEBUG:
+		// 	debug = atoi(jas_optarg);
+		// 	break;
 		case OPT_INFILE:
 			infile = jas_optarg;
 			break;
-		case OPT_MAXSAMPLES:
-			max_samples = strtoull(jas_optarg, 0, 10);
-			max_samples_valid = true;
-			break;
-		case OPT_MAXMEM:
-			max_mem = strtoull(jas_optarg, 0, 10);
-			break;
+		// case OPT_MAXSAMPLES:
+		// 	max_samples = strtoull(jas_optarg, 0, 10);
+		// 	max_samples_valid = true;
+		// 	break;
+		// case OPT_MAXMEM:
+		// 	max_mem = strtoull(jas_optarg, 0, 10);
+		// 	break;
 		case OPT_DECOPT:
 			if (dec_opt_spec[0] != '\0') {
 				strncat(dec_opt_spec, " ",
@@ -212,24 +212,24 @@ int main(int argc, char **argv)
 		case OPT_SPECIAL:
 			special = 1;
 			break;
-		case OPT_DEFAULT_MAX_MEM:
-			default_mem_limit = true;
-			break;
-		case OPT_LIST_ALL_CODECS:
-			list_codecs = 1;
-			list_codecs_all = 1;
-			break;
-		case OPT_LIST_ENABLED_CODECS:
-			list_codecs = 1;
-			list_codecs_all = 0;
-			break;
-		case OPT_ENABLE_FORMAT:
-			enable_format = jas_optarg;
-			break;
-		case OPT_ENABLE_ALL_FORMATS:
-			enable_all_formats = 1;
-			break;
-		case OPT_HELP:
+		// case OPT_DEFAULT_MAX_MEM:
+		// 	default_mem_limit = true;
+		// 	break;
+		// case OPT_LIST_ALL_CODECS:
+		// 	list_codecs = 1;
+		// 	list_codecs_all = 1;
+		// 	break;
+		// case OPT_LIST_ENABLED_CODECS:
+		// 	list_codecs = 1;
+		// 	list_codecs_all = 0;
+		// 	break;
+		// case OPT_ENABLE_FORMAT:
+		// 	enable_format = jas_optarg;
+		// 	break;
+		// case OPT_ENABLE_ALL_FORMATS:
+		// 	enable_all_formats = 1;
+		// 	break;
+		// case OPT_HELP:
 		default:
 			usage();
 			break;
